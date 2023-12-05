@@ -46,7 +46,7 @@ and manipulate data stored in an existing database.
 2. [Using `psql` to load data](https://github.com/makersacademy/databases-in-python/blob/main/sql_bites/02_using_psql.md) ✓
 3. [Querying data](https://github.com/makersacademy/databases-in-python/blob/main/sql_bites/03_querying_data.md) ✓
 4. [Updating or deleting data](https://github.com/makersacademy/databases-in-python/blob/main/sql_bites/04_updating_and_deleting_date.md) ✓
-5. [Creating new data](https://github.com/makersacademy/databases-in-python/blob/main/sql_bites/05_creating_new_data.md)
+5. [Creating new data](https://github.com/makersacademy/databases-in-python/blob/main/sql_bites/05_creating_new_data.md) ✓
 6. [Using TablePlus](https://github.com/makersacademy/databases-in-python/blob/main/sql_bites/06_using_table_plus.md)
 
 ### Phase Two: Challenges
