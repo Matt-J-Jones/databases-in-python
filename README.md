@@ -54,7 +54,7 @@ and manipulate data stored in an existing database.
 Go through these exercises and learn how to set up and gradually build a program
 which communicates with a database.
 
-1. [Setting up a project](https://github.com/makersacademy/databases-in-python/blob/main/challenges/01_setting_up_project.md)
+1. [Setting up a project](https://github.com/makersacademy/databases-in-python/blob/main/challenges/01_setting_up_project.md) ✓
 2. [Designing a Repository
    class](https://github.com/makersacademy/databases-in-python/blob/main/challenges/02_test_driving_model_repository_classes.md)
 3. [Diagramming a database
