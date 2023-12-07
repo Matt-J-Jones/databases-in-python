@@ -1,7 +1,8 @@
 import os
 import psycopg2
-from psycopg2 import connect
+# from psycopg2 import connect
 from psycopg2.extras import DictCursor
+from . import passwords
 
 # This class helps us interact with the database.
 # It wraps the underlying psycopg library that we are using.
@@ -9,7 +10,9 @@ from psycopg2.extras import DictCursor
 # If the below seems too complex right now, that's OK.
 # That's why we have provided it!
 class DatabaseConnection:
-    DATABASE_NAME = "music_library"  # <-- CHANGE THIS!
+    DATABASE_NAME = "test_table"  # <-- CHANGE THIS!
+    DB_USER = passwords.username() # <-- CHANGE THIS!
+    DB_PASSWORD = passwords.password()  # <-- CHANGE THIS!
 
     def __init__(self):
         self.connection = None
@@ -18,8 +21,8 @@ class DatabaseConnection:
     # We connect to localhost and select the database name given in argument.
     def connect(self):
         try:
-            db_url = os.environ.get("DATABASE_URL", f"postgresql://localhost/{self.DATABASE_NAME}")
-            self.connection = connect(db_url, cursor_factory=DictCursor)
+            db_url = f"postgresql://{self.DB_USER}:{self.DB_PASSWORD}@localhost/{self.DATABASE_NAME}"
+            self.connection = psycopg2.connect(db_url, cursor_factory=DictCursor)
         except psycopg2.OperationalError as e:
             raise Exception(f"Couldn't connect to the database {self.DATABASE_NAME}! {e}")
 
@@ -37,10 +40,10 @@ class DatabaseConnection:
     # It allows you to set some parameters too. You'll learn about this later.
     def execute(self, query, params=None):
         self._check_connection()
-        with self.connection.cursor() as cursor:
+        with self.connection.cursor(cursor_factory=DictCursor) as cursor:
             cursor.execute(query, params)
             if cursor.description is not None:
-                result = cursor.fetchall()
+                result = [dict(row) for row in cursor.fetchall()]
             else:
                 result = None
             self.connection.commit()
@@ -65,3 +68,4 @@ class DatabaseConnection:
 # db.seed("your_sql_file.sql")
 # result = db.execute("SELECT * FROM your_table;")
 # print(result)
+# Get-Content ../seeds/database_connection | psql -h 127.0.0.1 test_table
