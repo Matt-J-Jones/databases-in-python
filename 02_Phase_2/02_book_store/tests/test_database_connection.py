@@ -13,7 +13,7 @@ def test_database_connection(db_connection):
 
     # Retrieve all records
     result = db_connection.execute("SELECT * FROM test_table")
-
+    print("Actual Result:", result)
     # Assert that the results are what we expect
     assert result == [
         {"id": 1, "name": "first_record"},
