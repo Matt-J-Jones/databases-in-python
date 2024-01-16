@@ -10,7 +10,7 @@ from . import passwords
 # If the below seems too complex right now, that's OK.
 # That's why we have provided it!
 class DatabaseConnection:
-    DATABASE_NAME = "test_table"  # <-- CHANGE THIS!
+    DATABASE_NAME = "book_store"  # <-- CHANGE THIS!
     DB_USER = passwords.username() # <-- CHANGE THIS!
     DB_PASSWORD = passwords.password()  # <-- CHANGE THIS!
 
