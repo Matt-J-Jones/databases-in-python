@@ -56,7 +56,7 @@ which communicates with a database.
 
 1. [Setting up a project](https://github.com/makersacademy/databases-in-python/blob/main/challenges/01_setting_up_project.md) ✓
 2. [Designing a Repository
-   class](https://github.com/makersacademy/databases-in-python/blob/main/challenges/02_test_driving_model_repository_classes.md)
+   class](https://github.com/makersacademy/databases-in-python/blob/main/challenges/02_test_driving_model_repository_classes.md) ✓
 3. [Diagramming a database
    application](https://github.com/makersacademy/databases-in-python/blob/main/challenges/03_creating_sequence_diagrams.md)
 4. [Designing a schema with one
